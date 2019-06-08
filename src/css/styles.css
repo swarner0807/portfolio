@@ -1,0 +1,70 @@
+.wrapper {
+  background-color: #C8C2AE;
+}
+.panel {
+  max-width: 800px;
+  margin: 0 auto auto;
+  background-color: #8AB9B5;
+  height: 500px;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.panel.active {
+  max-height: 500px;
+  opacity: 100;
+}
+.accordion {
+  padding: 1rem;
+}
+.accordion .accordion-bar {
+  cursor: pointer;
+  width: 50%;
+  max-width: 800px;
+  padding: 1rem;
+  margin: 1rem auto auto;
+  background-color: #0EB1D2;
+}
+.accordion .accordion-bar svg {
+  float: right;
+}
+.navbar {
+  padding: 1rem;
+  background-color: #8AB9B5;
+  text-align: center;
+  font-size: 125%;
+}
+.navbar .nav-button {
+  cursor: pointer;
+  margin: 0 1rem 0 1rem;
+}
+.header {
+  background-color: #2B4141;
+  padding: 6rem;
+  text-align: center;
+}
+.content {
+  margin: 0 auto;
+  max-width: 800px;
+}
+.footer {
+  padding: 1rem;
+  background-color: #8AB9B5;
+  text-align: center;
+}
+.accordion-content {
+  /* css animation */
+  overflow: hidden;
+  padding: 0 1em;
+  max-height: 0;
+  opacity: 0;
+  /* add browser prefixes */
+  transition: all 0.3s ease;
+}
+.content-open {
+  max-height: 500px;
+  opacity: 1;
+  padding: 15px 20px;
+}
+/*# sourceMappingURL=styles.css.map */
