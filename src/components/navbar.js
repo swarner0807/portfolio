@@ -10,10 +10,10 @@ const Header = ({ dispatch }) => (
         </span> |
         <span className={'nav-button'} onClick={function () {
             dispatch(changePage('WORK'))
-        }}>Work
+        }}>Portfolio
         </span> |
         <span className={'nav-button'} onClick={function () {
-            dispatch(changePage('CONTACT'))
+            window.location='mailto:swarner0807@me.com? ';
         }}>Contact
         </span>
     </div>

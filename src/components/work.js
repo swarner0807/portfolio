@@ -4,6 +4,7 @@ import { faCaretRight, faCaretDown } from '@fortawesome/free-solid-svg-icons'
 import { toggleAccordion } from "../actions"
 import connect from "react-redux/es/connect/connect"
 import Fulltime from './panels/fulltime'
+import OpenSource from './panels/opensource'
 
 class Accordion extends React.Component{
     constructor(props) {
@@ -11,8 +12,12 @@ class Accordion extends React.Component{
     }
     render() {
         const component = this;
+        const classList = ['accordion-bar'];
+        if (!this.props.toggle[this.props.tab]) {
+            classList.push('shadow');
+        }
         return (
-            <div className={'accordion-bar'} onClick={function () {
+            <div className={classList.join(' ')} onClick={function () {
                 component.props.dispatch(toggleAccordion(component.props.tab));
             }}>
                 <span>{this.props.title}</span>
@@ -51,13 +56,16 @@ class Work extends React.Component{
 
     render() {
         return (
-            <div className={'accordion'}>
-                <Accordion title={'Full Time'} tab={'full'} toggle={this.props.toggleAccordion} dispatch={this.props.dispatch}/>
-                <Panel content={<Fulltime/>} active={this.props.toggleAccordion.full}/>
-                <Accordion title={'Open Source'} tab={'open'} toggle={this.props.toggleAccordion} dispatch={this.props.dispatch}/>
-                <Panel content={'LOOK AT ME CONTENT'} active={this.props.toggleAccordion.open} />
-                <Accordion title={'Freelance'} tab={'free'} toggle={this.props.toggleAccordion} dispatch={this.props.dispatch}/>
-                <Panel content={'LOOK AT ME CONTENT'} active={this.props.toggleAccordion.free}/>
+            <div className={'work'}>
+                <h2>
+                    I have worked on many projects using a variety of different technologies:
+                </h2>
+                <div className={'accordion'}>
+                    <Accordion title={'Full Time'} tab={'full'} toggle={this.props.toggleAccordion} dispatch={this.props.dispatch}/>
+                    <Panel content={<Fulltime/>} active={this.props.toggleAccordion.full}/>
+                    <Accordion title={'Open Source'} tab={'open'} toggle={this.props.toggleAccordion} dispatch={this.props.dispatch}/>
+                    <Panel content={<OpenSource/>} active={this.props.toggleAccordion.open} />
+                </div>
             </div>
         );
 

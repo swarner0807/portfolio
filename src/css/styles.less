@@ -1,43 +1,43 @@
+@import "./helpers.less";
+@import "./accordion.less";
+
+@primary: #D5D5D5;
+@body-text: #373737;
+@secondary: #9099A2;
+@navbar: #6D7993;
+@black : #000000;
+
+body {
+  margin: 0;
+  color: @body-text;
+  font-family: 'Exo', sans-serif;
+}
+
+h1 {
+  font-family: 'Exo', sans-serif;
+  font-size: 65px;
+  color: @primary;
+}
+
 .wrapper {
-  background-color: #C8C2AE;
-}
-
-.panel {
-  max-width: 800px;
-  margin: 0 auto auto;
-  background-color: #8AB9B5;
-  height: 500px;
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: all 0.3s ease;
-}
-
-.panel.active {
-  max-height: 500px;
-  opacity: 100;
-}
-
-.accordion {
-  padding: 1rem;
-  .accordion-bar {
-    cursor: pointer;
-    width: 50%;
-    max-width: 800px;
-    padding: 1rem;
-    margin: 1rem auto auto;
-    background-color: #0EB1D2;
-    svg {
-      float: right;
-    }
-  }
+  background-color: @primary;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .navbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
   padding: 1rem;
-  background-color: #8AB9B5;
+  color: @primary;
+  background-color: @navbar;
+  filter: drop-shadow(0px 4px 4px @black);
   text-align: center;
   font-size: 125%;
+  z-index: 1;
   .nav-button {
     cursor: pointer;
     margin: 0 1rem 0 1rem
@@ -45,35 +45,92 @@
 }
 
 .header {
-  background-color: #2B4141;
-  padding: 6rem;
+  background: linear-gradient(0deg, rgba(2,173,231,0.5), rgba(2,173,231,0.5)), url("../images/IMG_0706.jpg") right no-repeat;
+  background-size: cover;
   text-align: center;
+  height: 33vh;
+  padding-top: 16px;
+  &.main-page {
+    height: 100vh;
+  }
 }
 
 .content {
   margin: 0 auto;
   max-width: 800px;
-}
-
-.footer {
-  padding: 1rem;
-  background-color: #8AB9B5;
-  text-align: center;
-}
-
-.accordion-content {
-  /* css animation */
-  overflow: hidden;
-  padding: 0 1em;
-  max-height: 0;
-  opacity: 0;
-
-  /* add browser prefixes */
-  transition: all 0.3s ease;
+  padding: 0 16px 0 16px;
+  flex: 1 0 auto;
 }
 
 .content-open {
   max-height: 500px;
   opacity: 1;
   padding: 15px 20px;
+}
+
+.footer {
+  color: @primary;
+  padding: 1rem;
+  background-color: @navbar;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.bio {
+  font-family: 'Exo', sans-serif;
+  color: @body-text;
+  .bio-text {
+    font-size: 32px;
+    @media all and (max-width: 600px) {
+      font-size: 24px;
+    }
+  }
+  h2 {
+    font-size: 16px;
+    text-align: center;
+  }
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  flex-direction: column;
+}
+
+.box svg {
+  cursor: pointer;
+  color: @primary;
+  &:hover {
+    color: @secondary;
+  }
+}
+
+.wrap-text {
+  display: flex;
+  justify-content: center;
+  svg {
+    padding-right: 24px;
+    color: initial;
+  }
+  img {
+    height: 50%;
+    width: 50%;
+    border-radius: 35px 4px 46px 193px;
+  }
+  @media all and (max-width: 600px) {
+    /* We tell both sidebars to share a row */
+    flex-flow: row wrap;
+    img {
+      height: 100%;
+      width: 100%;
+      border-radius: 6px 6px 57px 57px;
+    }
+  }
+}
+
+.work img {
+  height: 50%;
+  width: 50%;
 }

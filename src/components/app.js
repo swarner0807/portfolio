@@ -15,15 +15,18 @@ const mapStateToProps = function(state){
 class App extends React.Component{
 
     render() {
+        const mainPage = this.props.changePage === 'MAIN';
         return (
             <div className={'wrapper'}>
                 <NavBar />
-                <Header />
-                {this.props.changePage === 'MAIN' ? (
-                    <Body />
-                ) : this.props.changePage === 'WORK' ? (
-                    <Work />
-                ) : null}
+                <Header isMainPage={mainPage}/>
+                <div id={'content'} className={'content'}>
+                    {this.props.changePage === 'MAIN' ? (
+                        <Body />
+                    ) : this.props.changePage === 'WORK' ? (
+                        <Work />
+                    ) : null}
+                </div>
                 <Footer />
             </div>
         );
