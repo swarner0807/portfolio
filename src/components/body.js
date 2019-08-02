@@ -1,5 +1,5 @@
 import React from 'react'
-import image from '../images/IMG_4348.jpeg'
+import image from '../images/stevenZoo.jpeg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faTwitterSquare, faGithub, faInstagram, faFacebookSquare, faLinkedin} from '@fortawesome/free-brands-svg-icons'
 
@@ -11,7 +11,7 @@ const Body = () => (
             My name is Steven Warner, a Web Developer from Omaha Nebraska with over {years} years of full time experience.
             I have worked on several large scale projects with teams from across the country.
         </div>
-        <div className={"wrap-text soft ends"}>
+        <div className={"wrap-text soft enFFds"}>
             <img className={"side soft bottom"} src={image}/>
             <div className={"side soft left"}>
                 <div>
